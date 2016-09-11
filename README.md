@@ -37,5 +37,32 @@ Once you connect these properly, after installing the driver, you will get the p
 After installing the Realterm, go to Port page, Feed in the port number seen under Device manager (mine is port 4) & speed as 115200  (Baud Rate). Then go to send page, select CR and LF in the EOL column. Now type in AT, The module will respond with OK. Here is the list of AT commands: http://www.pridopia.co.uk/pi-doc/ESP8266ATCommandsSet.pdf.
 
 ##<h3 id="1.2">1.2. Adafruit MQTT Simluation</h3>
+There is a detail tuturial from Adafruit web: https://learn.adafruit.com/mqtt-adafruit-io-and-you?view=all, here I just summarize and highlight some points may casue problems, espically the wiring part you may meet error when you upload the code into the ESP8266 if you didn't not wire properly.
+
 ####Preparation####
-Download Adafruit MQTT library from: https://github.com/adafruit/Adafruit_MQTT_Library/archive/master.zip. In the Arduino IDE, click Sketch>Include Library>Add .ZIP Library. Navigate to the ZIP file or folder containing the new library and click on it.
+Download Adafruit MQTT library from: https://github.com/adafruit/Adafruit_MQTT_Library/archive/master.zip. In the Arduino IDE, click Sketch>Include Library>Add .ZIP Library. Navigate to the ZIP file or folder containing the new library and click on it.</h3>
+Select Generic ESP8266 Module, upload speed = 115200 and the right COM port.
+
+####Wiring####
+* 【Arduino】3.3V →【ESP8266】VCC
+* 【Arduino】3.3V →【ESP8266】CH_PD
+* 【Arduino】GND →【ESP8266】GND
+* 【Arduino】GND →【USB To TTL】GND
+* 【USB To TTL】TXD →【ESP8266】URXD
+* 【USB To TTL】RXD →【ESP8266】UTXD
+* 【USB To TTL】RTS -> 【ESP8266】RST (IMPORTANT)
+* 【ESP8266】GPIO0 -> 330Ohm resitior -> GND (IMPORTANT)
+
+####Load up example####
+In the Arduino IDE, click File>Example>Adafruit MQTT Library>mqtt_esp8266, set up your WiFi credentials and adafruit.io username & key. NOW you can upload the sketch to your ESP8266. You should be able to see the upload 100% complete in the IDE as below.
+
+![](https://github.com/maydaymiao/Arduino/blob/master/images/ide.png)
+
+####Publication and Subscription test####
+Firstly, make sure you remove the RST and GPIO0 wire from ESP8266 after the sketch upload complete.<br>
+Then open up the serial console as soon as the sketch is done uploading, and click back to your adafruit.io dashboard. You'll see something like this. Click on/off button in your dashboard, you will see the singal going back to your serial console.
+
+![](https://github.com/maydaymiao/Arduino/blob/master/images/adafruit_mqtt_demo.JPG)
+
+![](https://github.com/maydaymiao/Arduino/blob/master/images/esp8266_running_wiring.jpg)
+
