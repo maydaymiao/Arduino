@@ -9,6 +9,7 @@ Linkedin: https://www.linkedin.com/profile/in/michael-miao-21939749
 * [1. ESP8266](#1)
   * [1.1. AT Command](#1.1)
   * [1.2. Adafruit MQTT Simluation](#1.2)
+  * [1.3. Adafruit MQTT DHT11](#1.3)
 
 
 ##<h2 id="1">1. ESP8266</h2>
@@ -59,10 +60,38 @@ In the Arduino IDE, click File>Example>Adafruit MQTT Library>mqtt_esp8266, set u
 ![](https://github.com/maydaymiao/Arduino/blob/master/images/ide.png)
 
 ####Publication and Subscription test####
-Firstly, make sure you remove the RST and GPIO0 wire from ESP8266 after the sketch upload complete.<br>
+**Firstly, make sure you remove the RST and GPIO0 wire from ESP8266 after the sketch upload complete.**<br>
 Then open up the serial console as soon as the sketch is done uploading, and click back to your adafruit.io dashboard. You'll see something like this. Click on/off button in your dashboard, you will see the singal going back to your serial console.
 
 ![](https://github.com/maydaymiao/Arduino/blob/master/images/adafruit_mqtt_demo.JPG)
 
 ![](https://github.com/maydaymiao/Arduino/blob/master/images/esp8266_running_wiring.jpg)
 
+##<h3 id="1.3">1.3. Adafruit MQTT DHT11</h3>
+Here a detail tuturial from Adafruit web: https://learn.adafruit.com/home-automation-in-the-cloud-with-the-esp8266-and-adafruit-io?view=all, but there are some bugs on that sketch which you will meet some error message after upload, this is because some recent changes to the Adafruit MQTT library, but that project has not yet been updated. Specifically, support for PROGMEM has been eliminated. So, you can just clone my sketch into your IDE which will work perfectly: https://github.com/maydaymiao/Arduino/blob/master/Adafruit_ESP8266_DHT11.ino.
+
+####Preparation####
+You will need to install the following Arduino libraries:<br>
+[Adafruit MQTT library](https://github.com/adafruit/Adafruit_MQTT_Library)<br>
+[DHT sensor library](https://github.com/adafruit/DHT-sensor-library)
+
+####Wiring####
+Similar as the last project, the only difference is to connect GPIO2 on ESP8266 to DHT11 DAT pin.
+* 【Arduino】3.3V →【ESP8266】VCC
+* 【Arduino】3.3V →【ESP8266】CH_PD
+* 【Arduino】GND →【ESP8266】GND
+* 【Arduino】GND →【USB To TTL】GND
+* 【USB To TTL】TXD →【ESP8266】URXD
+* 【USB To TTL】RXD →【ESP8266】UTXD
+* 【USB To TTL】RTS -> 【ESP8266】RST (IMPORTANT)
+* 【ESP8266】GPIO0 -> 330Ohm resitior -> GND (IMPORTANT)
+* 【ESP8266】GPIO2 -> DHT11 DAT
+* 【DHT】GND -> GND 
+* 【DHT】VCC -> 3.3V
+
+####Load up sketch####
+Clone my sketch into your Arduino IDE: https://github.com/maydaymiao/Arduino/blob/master/Adafruit_ESP8266_DHT11.ino
+
+####Test####
+**Again, make sure you remove the RST and GPIO0 wire from ESP8266 after the sketch upload complete, and you may need to plug out and plug in again of your CH_PD pin from breadboard**<br>
+Open your Adafruit IO, you should be able to see the data change. Here is my portal: https://io.adafruit.com/maydaymiao/esp8266. Enjoy~
