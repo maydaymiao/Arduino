@@ -95,3 +95,5 @@ Clone my sketch into your Arduino IDE: https://github.com/maydaymiao/Arduino/blo
 ####Test####
 **Again, make sure you remove the RST and GPIO0 wire from ESP8266 after the sketch upload complete, and you may need to plug out and plug in again of your CH_PD pin from breadboard**<br>
 Open your Adafruit IO, you should be able to see the data change. Here is my portal: https://io.adafruit.com/maydaymiao/esp8266. Enjoy~
+
+![](https://github.com/maydaymiao/Arduino/blob/master/images/esp8266_dht11_dashboard.png)
