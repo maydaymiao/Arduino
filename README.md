@@ -98,5 +98,4 @@ Open your Adafruit IO, you should be able to see the data change. Here is my por
 
 ![](https://github.com/maydaymiao/Arduino/blob/master/images/esp8266_dht11_dashboard.png)
 
-![](http://www.reactiongifs.us/wp-content/uploads/2013/10/nuh_uh_conan_obrien.gif)
 
