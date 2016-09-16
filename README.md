@@ -85,9 +85,9 @@ Similar as the last project, the only difference is to connect GPIO2 on ESP8266 
 * 【USB To TTL】RXD →【ESP8266】UTXD
 * 【USB To TTL】RTS -> 【ESP8266】RST (IMPORTANT)
 * 【ESP8266】GPIO0 -> 330Ohm resitior -> GND (IMPORTANT)
-* 【ESP8266】GPIO2 -> DHT11 DAT
+* 【ESP8266】GPIO2 -> DHT11 DAT -> 1K resistor -> 【DHT】VCC -> 3.3V
 * 【DHT】GND -> GND 
-* 【DHT】VCC -> 3.3V
+
 
 ####Load up sketch####
 Clone my sketch into your Arduino IDE: https://github.com/maydaymiao/Arduino/blob/master/Adafruit_ESP8266_DHT11.ino
