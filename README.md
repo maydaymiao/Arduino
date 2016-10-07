@@ -10,6 +10,7 @@ Linkedin: https://www.linkedin.com/profile/in/michael-miao-21939749
   * [1.1. AT Command](#1.1)
   * [1.2. Adafruit MQTT Simluation](#1.2)
   * [1.3. Adafruit MQTT DHT11](#1.3)
+  * [1.4. Store DHT11 data into Mongodb](#1.4)
 * [2. Apple Homekit](#1)
   * [2.1. Home app and Siri control - LED](#2.1)
 
@@ -99,6 +100,25 @@ Clone my sketch into your Arduino IDE: https://github.com/maydaymiao/Arduino/blo
 Open your Adafruit IO, you should be able to see the data change. Here is my portal: https://io.adafruit.com/maydaymiao/esp8266. Enjoy~
 
 ![](https://github.com/maydaymiao/Arduino/blob/master/images/esp8266_dht11_dashboard.png)
+
+
+##<h3 id="1.4">1.4. Store DHT11 data into Mongodb</h3>
+Suppose you already know how to publish data from DHT11-ESP8266 to MQTT Broker. For this part, we are going to use Node.js to subscribe data from broker and store into the MongoDB. I will just skip the step of MongoDB installation as you may be able to find from Google easily. I use a MongoDB GUI called Mongochef, of course you can use others, it's not limited. Now let's start!<br>
+
+
+* Install MongoDB and Mongochef in your comptuer.<br>
+* Install MQTT.js and mongodb driver for Node.js.<br>
+  * npm install mqtt [MQTT.js](https://www.npmjs.com/package/mqtt)<br>
+  * npm install mongodb [official MongoDB driver for Node.js](https://www.npmjs.com/package/mongodb)<br>
+* upload this [code](https://github.com/maydaymiao/Arduino/blob/master/Mqtt_LocalRaspberry_DHT11.ino) into your ESP8266 and connect DHT11 to the ESP8266 properly.<br>
+* Run "mongod" in the command prompt.<br>
+* Copy this [code](https://github.com/maydaymiao/Arduino/blob/master/Mongodb_MQTT.js) into your computer and run.<br>
+* Open Mongochef and connect to "test" database.<br>
+* Clieck IntelliShell from Mongochef, type `db.newcollection.find().pretty()` and run.<br>
+
+Finally you should get the record similar as below screen shot.<br><br>
+![](https://github.com/maydaymiao/Arduino/blob/master/images/mongodb.png)
+
 
 ##<h2 id="2">2. Apple Homekit</h2>
 ####Introduction####
