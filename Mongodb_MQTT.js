@@ -1,7 +1,7 @@
 var mqtt = require('mqtt'); //includes mqtt server
 var mongodb = require('mongodb'); // includes mongoDB
 var mongodbClient = mongodb.MongoClient; //initialises the mongoDB client
-var mongodbURI = 'mongodb://localhost:27017/test'; //activating the MongoDB port 27017, here TempMontor is the name of the database
+var mongodbURI = 'mongodb://localhost:27017/test'; //activating the MongoDB port 27017, here test is the name of the database
 var deviceRoot = "dht11"; //deviceroot is topic name given in arduino code
 var collection,client; //initialise collection and client
 
