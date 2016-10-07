@@ -8,9 +8,9 @@
 
 // Update these with values suitable for your network.
 
-const char* ssid = "maydaymiao";
-const char* password = "AD65250844";
-const char* mqtt_server = "192.168.2.102";
+const char* ssid = "your ssid";
+const char* password = "your wifi password";
+const char* mqtt_server = "192.168.2.103";
 char* topic = "dht11";
 String clientName = "Arduino-esp"; 
 
