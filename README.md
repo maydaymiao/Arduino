@@ -117,7 +117,7 @@ https://www.youtube.com/watch?v=6-IZMlTjPUk. From this video, it should give you
 Here is how it works: Tell Siri to turn on/off the light -> Trigger an action on HAP-NodeJS server -> HAP-NodeJS publishes a "light on/off" message to MQTT Broker with a certain topic -> ESP8266 subscribes the message from MQTT Broker with the same topic -> Physically turn on/off the light.
 
 ####HAP-NodeJS####
-In most of other tutorials, they are all talking about installing HAP-NodeJS on a Raspberry Pi (https://gist.github.com/elvisimprsntr/f23c76587d48be0ec4b9), and this is what I initially tried, however I failed at the step which requires to install libavahi-compat-libdnssd-dev because of some dependency missing, maybe I will try later. But anyway, I install the HAP-NodeJS in Ubuntu finally and it works well. One tip is please do NOT use a virtual machine to install the Ubuntu unless you select the bridge mode of network. Because all the devices must be under same network.<br>
+In most of other tutorials, they are all talking about installing HAP-NodeJS on a Raspberry Pi， for example: https://gist.github.com/elvisimprsntr/f23c76587d48be0ec4b9, and this is what I initially tried, however I failed at the step which requires to install libavahi-compat-libdnssd-dev because of some dependency missing, maybe I will try later. But anyway, I install the HAP-NodeJS in Ubuntu finally and it works well. One tip is please do NOT use a virtual machine to install the Ubuntu unless you select the bridge mode of network. Because all the devices must be under same network.<br>
 
 This is a brief guide to installing HAP-NodeJS on an Ubuntu/Debian system. (Copy from: https://github.com/KhaosT/HAP-NodeJS/wiki/Installing)<br>
 
@@ -143,9 +143,19 @@ Try to run the server:<br>
 
 It will probably give you errors about missing modules. Install these using `sudo npm install <module name>`, replacing <module name> with the name of the module it is missing. After installing the module it wanted, run npm rebuild and try to run the server again with node Core.js. Repeat installing missing modules until the server launches with no errors. HAP-NodeJS is now all set up.
 
+![](https://github.com/maydaymiao/Arduino/blob/master/images/Core.js.png)
+
 ####MQTT Broker####
 Please refer to my Raspberry Pi repository: https://github.com/maydaymiao/Raspberry_Pi
 
 ####ESP8266 Arduino sketch####
 You can find the source code at: https://github.com/maydaymiao/Arduino/blob/master/Mqtt_LocalRaspberry_Led.ino
+
+####Making your own accessory####
+Here is a complete code that fits to my broker and ESP8266: https://github.com/maydaymiao/Arduino/blob/master/Light_accessory.js. What you only need to do is remove the initial Light_accessory.js from the folder and copy mine into it.
+
+####HomeKit accessory pairing####
+For Pairing use this pin code from the HAP-NodeJS source: `light.pincode = "031-45-154";`. Of course, you can change it from the code. Again, you can check my video record for the final result: https://www.youtube.com/watch?v=6-IZMlTjPUk.
+
+
 
