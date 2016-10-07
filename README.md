@@ -10,6 +10,8 @@ Linkedin: https://www.linkedin.com/profile/in/michael-miao-21939749
   * [1.1. AT Command](#1.1)
   * [1.2. Adafruit MQTT Simluation](#1.2)
   * [1.3. Adafruit MQTT DHT11](#1.3)
+* [2. Apple Homekit](#1)
+  * [2.1. Home app and Siri control - LED](#2.1)
 
 
 ##<h2 id="1">1. ESP8266</h2>
@@ -98,4 +100,52 @@ Open your Adafruit IO, you should be able to see the data change. Here is my por
 
 ![](https://github.com/maydaymiao/Arduino/blob/master/images/esp8266_dht11_dashboard.png)
 
+##<h2 id="2">2. Apple Homekit</h2>
+####Introduction####
+In iOS 9, along with Siri, you could use a number of third-party apps from developers and device makers to control devices. But adding a built-in app and other controls in the latest version of iOS should help make it easier for users.<br>
+A new Home app from ios 10 lets you simply and securely set up, manage and control your home all in one place. Accessories can be managed individually or grouped into scenes so they work together with a single command and can be controlled by using Siri. 
+
+##<h3 id="2.1">2.1. Home app and Siri control - LED</h3>
+####Overview####
+https://www.youtube.com/watch?v=6-IZMlTjPUk. From this video, it should give you the idea that what I have achieved for this experiment. Basically, there are two kinds of control here - home app which is the new feature released under ios 10 and Siri. If you have read the previous tutorials, you should know what is MQTT broker and ESP8266 and these are the critical parts in this experiment. Now let's start. Here are the components involved:<br>
+
+* HAP-NodeJS running on the Ubuntu 16.04
+* MQTT Broker running on the Raspberry Pi
+* LED connected to an ESP8266 module
+* ios 10 and home app
+
+Here is how it works: Tell Siri to turn on/off the light -> Trigger an action on HAP-NodeJS server -> HAP-NodeJS publishes a "light on/off" message to MQTT Broker with a certain topic -> ESP8266 subscribes the message from MQTT Broker with the same topic -> Physically turn on/off the light.
+
+####HAP-NodeJS####
+In most of other tutorials, they are all talking about installing HAP-NodeJS on a Raspberry Pi (https://gist.github.com/elvisimprsntr/f23c76587d48be0ec4b9), and this is what I initially tried, however I failed at the step which requires to install libavahi-compat-libdnssd-dev because of some dependency missing, maybe I will try later. But anyway, I install the HAP-NodeJS in Ubuntu finally and it works well. One tip is please do NOT use a virtual machine to install the Ubuntu unless you select the bridge mode of network. Because all the devices must be under same network.<br>
+
+This is a brief guide to installing HAP-NodeJS on an Ubuntu/Debian system. (Copy from: https://github.com/KhaosT/HAP-NodeJS/wiki/Installing)<br>
+
+Install node.js, npm, node-gyp and other things we need:<br>
+```linux
+sudo apt-get update
+sudo apt-get install nodejs npm git-core libnss-mdns libavahi-compat-libdnssd-dev
+sudo npm config set registry http://registry.npmjs.org/
+sudo npm install -g node-gyp
+```
+
+Clone the HAP-NodeJS project:<br>
+`git clone https://github.com/KhaosT/HAP-NodeJS.git`
+
+Go into the directory where you cloned it:<br>
+`cd HAP-NodeJS`
+
+Rebuild npm:<br>
+`npm rebuild`
+
+Try to run the server:<br>
+`node Core.js`<br>
+
+It will probably give you errors about missing modules. Install these using `sudo npm install <module name>`, replacing <module name> with the name of the module it is missing. After installing the module it wanted, run npm rebuild and try to run the server again with node Core.js. Repeat installing missing modules until the server launches with no errors. HAP-NodeJS is now all set up.
+
+####MQTT Broker####
+Please refer to my Raspberry Pi repository: https://github.com/maydaymiao/Raspberry_Pi
+
+####ESP8266 Arduino sketch####
+You can find the source code at: https://github.com/maydaymiao/Arduino/blob/master/Mqtt_LocalRaspberry_Led.ino
 
