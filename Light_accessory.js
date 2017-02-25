@@ -22,11 +22,11 @@ var CHRISTMAS_LIGHT = {
   setPowerOn: function(on) { 
     console.log("Turning the ESP8266_LED %s!", on ? "on" : "off");
     if (on) {
-      client.publish('inTopic', '0');
+      client.publish('led', '1');
       CHRISTMAS_LIGHT.powerOn = on;
    	}
     else {
-	    client.publish('inTopic','1');
+	    client.publish('led','0');
       CHRISTMAS_LIGHT.powerOn = false;
    };
 
