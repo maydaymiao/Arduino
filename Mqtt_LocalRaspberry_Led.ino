@@ -1,3 +1,5 @@
+/*topic = led, 1: turn on, 0: turn off*/
+
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
@@ -9,9 +11,9 @@
 
 // Update these with values suitable for your network.
 
-const char* ssid = "your ssid";
-const char* password = "your password";
-const char* mqtt_server = "your mqtt broker ip";
+const char* ssid = "maydaymiao";
+const char* password = "AD65250844";
+const char* mqtt_server = "192.168.2.103";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -58,14 +60,12 @@ void callback(char* topic, byte* payload, unsigned int length) {
   Serial.println();
 
   // Switch on the LED if an 1 was received as first character
-  if ((char)payload[0] == '1') {
-    digitalWrite(LAMP, LOW);   // Turn the LED on (Note that LOW is the voltage level
-    // but actually the LED is on; this is because
-    // it is acive low on the ESP-01)
-  } else {
-    digitalWrite(LAMP, HIGH);  // Turn the LED off by making the voltage HIGH
+  if ((char)payload[0] == '0') {
+    digitalWrite(LAMP, LOW);   
+  } 
+  else {
+    digitalWrite(LAMP, HIGH);  
   }
-
 }
 
 void reconnect() {
@@ -75,10 +75,7 @@ void reconnect() {
     // Attempt to connect
     if (client.connect("ESP8266Client")) {
       Serial.println("connected");
-      // Once connected, publish an announcement...
-      client.publish("outTopic", "hello world");
-      // ... and resubscribe
-      client.subscribe("inTopic");
+      client.subscribe("led");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -88,20 +85,10 @@ void reconnect() {
     }
   }
 }
-void loop() {
 
+void loop() {
   if (!client.connected()) {
     reconnect();
   }
   client.loop();
-
-  long now = millis();
-  if (now - lastMsg > 2000) {
-    lastMsg = now;
-    ++value;
-    snprintf (msg, 75, "hello world #%ld", value);
-    Serial.print("Publish message: ");
-    Serial.println(msg);
-    client.publish("outTopic", msg);
-  }
 }
