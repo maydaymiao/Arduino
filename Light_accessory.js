@@ -15,7 +15,6 @@ var Service = require('../').Service;
 var Characteristic = require('../').Characteristic;
 var uuid = require('../').uuid;
 
-// here's a fake hardware device that we'll expose to HomeKit
 var CHRISTMAS_LIGHT = {
   powerOn: false,
   
