@@ -9,7 +9,7 @@ iptables -t nat -A SHADOWSOCKS -d 14.1.24.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 14.1.64.0/18 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 14.102.180.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 14.192.0.0/21 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 14.192.56.0/21 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 14.192.48.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 14.192.64.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 27.0.0.0/10 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 27.50.40.0/21 -j RETURN
@@ -38,7 +38,7 @@ iptables -t nat -A SHADOWSOCKS -d 27.192.0.0/11 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 27.224.0.0/14 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 36.0.0.0/8 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 36.255.112.0/21 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 36.255.192.0/21 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 36.255.220.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 39.0.0.0/8 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 40.72.0.0/15 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 40.125.128.0/17 -j RETURN
@@ -59,6 +59,7 @@ iptables -t nat -A SHADOWSOCKS -d 43.251.232.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 43.251.240.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 43.252.0.0/18 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 43.252.224.0/22 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 45.40.192.0/18 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 45.65.0.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 45.112.0.0/14 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 45.115.44.0/22 -j RETURN
@@ -70,7 +71,10 @@ iptables -t nat -A SHADOWSOCKS -d 45.116.96.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 45.116.136.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 45.116.152.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 45.116.208.0/22 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 45.117.0.0/17 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 45.117.0.0/20 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 45.117.20.0/22 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 45.117.64.0/19 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 45.117.112.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 45.117.224.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 45.119.32.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 45.119.64.0/20 -j RETURN
@@ -173,12 +177,10 @@ iptables -t nat -A SHADOWSOCKS -d 103.5.192.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.5.252.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.6.72.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.6.96.0/20 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 103.6.120.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.6.208.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.6.228.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.7.0.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.7.24.0/21 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 103.7.120.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.7.136.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.7.212.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.7.216.0/21 -j RETURN
@@ -217,7 +219,7 @@ iptables -t nat -A SHADOWSOCKS -d 103.15.96.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.15.200.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.16.48.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.16.64.0/18 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 103.17.40.0/21 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 103.17.32.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.17.64.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.17.120.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.17.128.0/17 -j RETURN
@@ -272,7 +274,6 @@ iptables -t nat -A SHADOWSOCKS -d 103.27.240.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.28.0.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.28.176.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.28.192.0/19 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 103.29.0.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.29.16.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.29.128.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.29.136.0/22 -j RETURN
@@ -313,7 +314,7 @@ iptables -t nat -A SHADOWSOCKS -d 103.42.64.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.42.104.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.42.180.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.42.192.0/18 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 103.43.16.0/21 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 103.43.16.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.43.80.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.43.96.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.43.176.0/20 -j RETURN
@@ -327,7 +328,7 @@ iptables -t nat -A SHADOWSOCKS -d 103.48.144.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.48.192.0/18 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.49.12.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.49.16.0/20 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 103.49.72.0/21 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 103.49.64.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.49.92.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.49.96.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.49.128.0/22 -j RETURN
@@ -370,7 +371,6 @@ iptables -t nat -A SHADOWSOCKS -d 103.57.8.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.57.52.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.57.56.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.57.64.0/20 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 103.57.104.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.57.128.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.57.192.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.58.0.0/18 -j RETURN
@@ -382,7 +382,7 @@ iptables -t nat -A SHADOWSOCKS -d 103.59.148.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.59.160.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.60.32.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.60.40.0/21 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 103.60.160.0/20 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 103.60.160.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.60.228.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.60.236.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.61.48.0/20 -j RETURN
@@ -395,6 +395,9 @@ iptables -t nat -A SHADOWSOCKS -d 103.71.128.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.71.144.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.71.232.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.84.128.0/20 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 103.90.52.0/22 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 103.91.32.0/20 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 103.91.108.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.192.0.0/16 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.193.40.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.193.96.0/19 -j RETURN
@@ -459,7 +462,6 @@ iptables -t nat -A SHADOWSOCKS -d 103.208.128.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.209.112.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.209.128.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.209.192.0/19 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 103.209.232.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.210.0.0/18 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.210.96.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.210.128.0/18 -j RETURN
@@ -589,7 +591,6 @@ iptables -t nat -A SHADOWSOCKS -d 103.245.60.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.245.64.0/18 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.245.128.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.246.0.0/19 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 103.246.72.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.246.96.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.246.128.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 103.246.152.0/21 -j RETURN
@@ -665,6 +666,7 @@ iptables -t nat -A SHADOWSOCKS -d 115.166.0.0/17 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 116.66.0.0/17 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 116.66.176.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 116.89.128.0/18 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 116.89.240.0/21 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 116.90.80.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 116.90.160.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 116.95.0.0/16 -j RETURN
@@ -716,7 +718,7 @@ iptables -t nat -A SHADOWSOCKS -d 125.60.0.0/15 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 125.62.0.0/17 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 125.254.128.0/17 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 137.59.32.0/19 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 137.59.88.0/21 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 137.59.64.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 139.0.0.0/12 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 139.128.0.0/15 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 139.148.0.0/16 -j RETURN
@@ -780,6 +782,7 @@ iptables -t nat -A SHADOWSOCKS -d 153.36.0.0/15 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 153.96.0.0/14 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 153.100.0.0/15 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 153.118.0.0/15 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 154.8.128.0/17 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 157.0.0.0/16 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 157.18.0.0/16 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 157.61.0.0/16 -j RETURN
@@ -822,6 +825,7 @@ iptables -t nat -A SHADOWSOCKS -d 171.80.0.0/12 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 171.96.0.0/11 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 171.208.0.0/12 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 172.16.0.0/12 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 172.81.192.0/18 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 175.0.0.0/8 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 175.102.0.0/16 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 175.106.0.0/15 -j RETURN
@@ -863,7 +867,9 @@ iptables -t nat -A SHADOWSOCKS -d 183.78.180.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 183.182.0.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 192.124.154.0/23 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 192.140.128.0/17 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 192.144.0.0/16 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 192.168.0.0/16 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 193.112.0.0/16 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 195.78.82.0/23 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.0.96.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.0.176.0/22 -j RETURN
@@ -925,7 +931,6 @@ iptables -t nat -A SHADOWSOCKS -d 202.52.32.0/23 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.52.34.0/24 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.52.44.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.52.140.0/22 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 202.52.144.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.53.140.0/24 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.53.143.0/24 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.57.192.0/19 -j RETURN
@@ -989,6 +994,7 @@ iptables -t nat -A SHADOWSOCKS -d 202.90.0.0/17 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.90.192.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.90.224.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.91.0.0/19 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 202.91.36.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.91.96.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.91.128.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.91.160.0/19 -j RETURN
@@ -1069,7 +1075,7 @@ iptables -t nat -A SHADOWSOCKS -d 202.173.128.0/17 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.174.64.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.174.124.0/22 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.176.128.0/17 -j RETURN
-iptables -t nat -A SHADOWSOCKS -d 202.179.128.0/18 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 202.179.160.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.179.240.0/20 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.180.128.0/19 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 202.180.208.0/20 -j RETURN
